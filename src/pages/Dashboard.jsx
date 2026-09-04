@@ -10,14 +10,16 @@ function Dashboard() {
     <>
       <div>
         <StateCard></StateCard>
+
         <div className="mt-3 flex gap-3">
           <DeliveryChart></DeliveryChart>
-          <RecentDeliveries></RecentDeliveries>
-          <div className="flex flex-col gap-3">
+
+          <div className="flex-1 min-w-0 flex flex-col gap-3">
             <AiPredictions></AiPredictions>
-            <AiPredictions></AiPredictions>
+            <RecentDeliveries></RecentDeliveries>
           </div>
         </div>
+
         <div className="flex gap-4">
           <ActiveVehicles></ActiveVehicles>
           <TopRoutes></TopRoutes>
