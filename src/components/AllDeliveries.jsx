@@ -103,7 +103,7 @@ function AllDerliveries() {
         <div className="w-full mt-3">
           <table className="w-full text-xs">
             <thead>
-              <tr className="bg-slate-100 *:p-2 border border-slate-200">
+              <tr className="bg-slate-100 *:p-3 border border-slate-200">
                 <th>ID</th>
                 <th>Consignee</th>
                 <th>Location</th>
@@ -118,7 +118,7 @@ function AllDerliveries() {
               {currentData.map((item) => (
                 <tr
                   key={item.id}
-                  className="*:p-2 bg-slate-50 border border-slate-200 *:pl-3"
+                  className="*:p-3 bg-slate-50 border border-slate-200 *:pl-3"
                 >
                   <td>{item.id}</td>
                   <td>{item.consignee}</td>
