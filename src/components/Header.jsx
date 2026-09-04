@@ -19,7 +19,7 @@ function Header() {
       <div className=" w-full flex justify-between px-5 py-3">
         <div className="flex justify-between">
           <div className="flex gap-3">
-            <span className="text-2xl">≡</span>
+            
             <div>
               <h2 className="text-xl font-bold">Dashboard</h2>
               <p className="text-sm">

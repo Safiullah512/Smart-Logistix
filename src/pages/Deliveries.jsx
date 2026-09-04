@@ -1,6 +1,7 @@
 import AllDerliveries from "../components/AllDeliveries";
 import DeliveryTracking from "../components/DeliveryTracking";
 import StateCard from "../components/StateCard 2";
+
 function Deliveries() {
   return (
     <>

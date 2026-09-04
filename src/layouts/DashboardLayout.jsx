@@ -8,7 +8,7 @@ function DashboardLayout() {
     <>
       <div className="flex">
         <Sidebar></Sidebar>
-        <div className="flex-1 mx-3">
+        <div className="flex-1 min-w-0 mx-3">
           <Header></Header>
           
           <main>

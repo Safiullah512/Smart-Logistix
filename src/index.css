@@ -3,3 +3,13 @@
 body {
     background-color: #f5f7fb;
 }
+
+/* the code written below is for the recent deliveries container & ai prediction container on the dashboard page
+this code hide the scrollbar on that container */
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
