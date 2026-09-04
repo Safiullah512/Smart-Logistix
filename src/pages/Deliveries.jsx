@@ -1,4 +1,4 @@
-import StateCard from "../components/StateCard 2";
+import StateCard from "../components/StateCard";
 function Deliveries() {
   return (
     <>
