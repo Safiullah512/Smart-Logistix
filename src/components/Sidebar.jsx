@@ -22,8 +22,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGoodreads } from "@fortawesome/free-brands-svg-icons";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+
 function Sidebar() {
   return (
     <>
@@ -93,7 +94,8 @@ function Sidebar() {
 
           {/* Vehicles */}
 
-          <button className="mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
+          <button 
+            className="mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
             <span className="w-5 h-5 flex items-center justify-center shrink-0">
               <Van className="w-5 h-5" />
             </span>
@@ -127,11 +129,20 @@ function Sidebar() {
             <span>Accessibility</span>
           </button>
           {/* AI */}
-
-          <button className="mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
+          
+          <NavLink
+            to="/aipredictions"
+            className={({ isActive }) =>
+              `mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs transition ${
+                isActive 
+                  ? "bg-blue-500 text-white" 
+                  : "text-slate-300 hover:bg-slate-800 hover:text-white"
+              }`
+            }
+          >
             <span className="w-5 h-5 flex items-center justify-center">🤖</span> 
             <span>AI Predictions</span>
-          </button>
+          </NavLink>
 
           <p className="mb-1 mt-3 pt-3 px-3 text-xs font-semibold uppercase text-white border-t  w-full border-slate-800">
             Reports
