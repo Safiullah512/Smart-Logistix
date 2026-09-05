@@ -27,7 +27,7 @@ import { NavLink } from "react-router-dom";
 function Sidebar() {
   return (
     <>
-      <aside className="w-fit min-h-screen bg-[#111827] color-white  text-white ">
+      <aside className="w-fit min-h-screen bg-[#111827] text-white flex flex-col">
         <div className="border-b border-slate-800 px-6 py-5 ">
           <div className="flex gap-2">
             <span>
@@ -54,11 +54,18 @@ function Sidebar() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `mb-1 flex w-full items-center gap-3 rounded-lg px-4 py-2 text-xs transition ${isActive ? "bg-blue-500 text-white" : "text-slate-300 hover:bg-slate-800 hover:text-white"}`
+              `mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs transition ${
+                isActive 
+                  ? "bg-blue-500 text-white" 
+                  : "text-slate-300 hover:bg-slate-800 hover:text-white"
+              }`
             }
           >
-            <span>
-              <FontAwesomeIcon icon={faHome}></FontAwesomeIcon>
+            <span className="w-5 h-5 flex items-center justify-center shrink-0">
+              <FontAwesomeIcon 
+                icon={faHome} 
+                className="w-5 h-5"
+              />
             </span>
             <span>Dashboard</span>
           </NavLink>
@@ -68,54 +75,62 @@ function Sidebar() {
           <NavLink
             to="/deliveries"
             className={({ isActive }) =>
-              `mb-1 flex w-full items-center gap-3 rounded-lg px-4 py-2 text-xs transition ${isActive ? "bg-blue-500 text-white" : "text-slate-300 hover:bg-slate-800 hover:text-white"}`
+              `mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs transition ${
+                isActive 
+                  ? "bg-blue-500 text-white" 
+                  : "text-slate-300 hover:bg-slate-800 hover:text-white"
+              }`
             }
           >
-            <span>
-              <FontAwesomeIcon icon={faBowlFood}></FontAwesomeIcon>
+            <span className="w-5 h-5 flex items-center justify-center shrink-0">
+              <FontAwesomeIcon 
+                icon={faBowlFood} 
+                className="w-5 h-5"
+              />
             </span>
             <span>Deliveries</span>
           </NavLink>
 
           {/* Vehicles */}
 
-          <button className="mb-1 flex w-full items-center gap-3 rounded-lg px-4 p-2 py-2 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
-            <span>
-              <Van></Van>
+          <button className="mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
+            <span className="w-5 h-5 flex items-center justify-center shrink-0">
+              <Van className="w-5 h-5" />
             </span>
             <span>Vehicles</span>
           </button>
 
           {/* Drivers */}
 
-          <button className="mb-1 flex w-full items-center gap-3 rounded-lg px-4 p-2  py-2 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
+          <button className="mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
             <span>
-              <User></User>
+              <User className="w-5 h-5" />
             </span>
             <span>Driver</span>
           </button>
 
           {/* Routes */}
 
-          <button className="mb-1 flex w-full items-center gap-3 rounded-lg px-4 p-2  py-2 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
+          <button className="mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
             <span>
-              <RouteIcon></RouteIcon>
+              <RouteIcon className="w-5 h-5" />
             </span>
             <span>Route</span>
           </button>
 
           {/* Accessibility */}
 
-          <button className="mb-1 flex w-full items-center gap-3 rounded-lg px-4 p-2  py-2 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
+          <button className="mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
             <span>
-              <Accessibility></Accessibility>
+              <Accessibility className="w-5 h-5" />
             </span>
             <span>Accessibility</span>
           </button>
           {/* AI */}
 
-          <button className="mb-1 flex w-full items-center gap-3 rounded-lg px-4 p-2  py-2 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
-            <span>🤖</span> <span>AI Predictions</span>
+          <button className="mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
+            <span className="w-5 h-5 flex items-center justify-center">🤖</span> 
+            <span>AI Predictions</span>
           </button>
 
           <p className="mb-1 mt-3 pt-3 px-3 text-xs font-semibold uppercase text-white border-t  w-full border-slate-800">
@@ -124,9 +139,9 @@ function Sidebar() {
 
           {/* Reports */}
 
-          <button className="mb-1 flex w-full items-center gap-3 rounded-lg px-4 p-2  py-2 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white border-b border-slate-800 pb-5">
+          <button className="mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
             <span>
-              <Database></Database>
+              <Database className="w-5 h-5" />
             </span>
             <span>Reports & Analytics</span>
           </button>
@@ -134,22 +149,22 @@ function Sidebar() {
           {/* Settings */}
 
           <p className="mb-1 mt-3 pt-3 px-3 text-xs font-semibold uppercase text-white border-t  w-full border-slate-800">
-            Setting
+            Settings
           </p>
 
-          <button className="mb-1 flex w-full items-center gap-3 rounded-lg px-4 p-2  py-2 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white border-b border-slate-800 pb-5">
+          <button className="mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
             <span>
-              <Settings></Settings>
+              <Settings className="w-5 h-5" />
             </span>
-            <span>Setting</span>
+            <span>Settings</span>
           </button>
         </nav>
 
         {/* Logout */}
 
-        <div className="mt-50 text-center flex justify-center mb-10 gap-3">
+        <div className="mt-auto w-full flex justify-center items-center gap-3 py-3 px-4 shrink-0 text-slate-300 hover:bg-slate-800 hover:text-white transition cursor-pointer">
           <span>
-            <LogOut></LogOut>
+            <LogOut className="w-5 h-5" />
           </span>
           <p className="cursor-pointer">Logout</p>
         </div>
