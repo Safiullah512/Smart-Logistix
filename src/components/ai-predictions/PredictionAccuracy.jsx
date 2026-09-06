@@ -1,130 +1,89 @@
+import {
+  Area,
+  AreaChart,
+  CartesianGrid,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import { ChevronDown } from "lucide-react";
 
-function PredictionAccuracy() {
-  return (
-    <div className="bg-white rounded-lg shadow-[0_0_5px_rgba(0,0,0,0.2)] p-4">
+const data = [
+  { day: "Mon", accuracy: 50 },
+  { day: "Tue", accuracy: 76 },
+  { day: "Wed", accuracy: 63 },
+  { day: "Thu", accuracy: 70 },
+  { day: "Fri", accuracy: 83 },
+  { day: "Sat", accuracy: 63 },
+  { day: "Sun", accuracy: 82 },
+];
 
-      {/* Header */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="font-bold text-sm">
-          Prediction Accuracy Trend
-          <span className="font-normal text-xs text-slate-500 ml-1">
+function PredictionAccuracyTrend() {
+  return (
+    <div className="bg-white rounded-lg p-4 shadow-[0_0_5px_rgba(0,0,0,0.2)] h-[470px]">
+      
+      <div className="flex items-center justify-between">
+        <h2 className="font-bold text-lg">
+          Prediction Accuracy Trend{" "}
+          <span className="font-normal text-sm text-slate-500">
             (This Week)
           </span>
         </h2>
 
-        <button className="border border-slate-300 rounded-lg px-3 py-1 text-xs flex items-center gap-2">
+        <button className="border border-slate-300 rounded-lg px-4 py-2 text-sm flex items-center gap-2">
           This Week
           <ChevronDown className="w-4 h-4" />
         </button>
       </div>
 
-      {/* Chart */}
-      <div className="relative h-56">
+      <div className="h-[300px] mt-3">
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
 
-        {/* Y axis */}
-        <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-slate-500">
-          <span>100%</span>
-          <span>75%</span>
-          <span>50%</span>
-          <span>25%</span>
-          <span>0%</span>
-        </div>
+            <XAxis dataKey="day" />
 
-        {/* Chart area */}
-        <div className="ml-10 h-full relative">
-
-          {/* Horizontal lines */}
-          <div className="absolute inset-0 flex flex-col justify-between">
-            <div className="border-t border-dashed border-slate-300"></div>
-            <div className="border-t border-dashed border-slate-300"></div>
-            <div className="border-t border-dashed border-slate-300"></div>
-            <div className="border-t border-dashed border-slate-300"></div>
-            <div className="border-t border-dashed border-slate-300"></div>
-          </div>
-
-          {/* Line */}
-          <svg
-            viewBox="0 0 700 200"
-            className="absolute inset-0 w-full h-full"
-            preserveAspectRatio="none"
-          >
-            {/* Area */}
-            <polygon
-              points="
-                0,100
-                116,50
-                233,75
-                350,62
-                466,38
-                583,75
-                700,38
-                700,200
-                0,200
-              "
-              fill="rgba(99,102,241,0.10)"
+            <YAxis
+              domain={[0, 100]}
+              tickFormatter={(value) => `${value}%`}
             />
 
-            {/* Line */}
-            <polyline
-              points="
-                0,100
-                116,50
-                233,75
-                350,62
-                466,38
-                583,75
-                700,38
-              "
-              fill="none"
+            <Tooltip
+              formatter={(value) => [`${value}%`, "Accuracy"]}
+            />
+
+            <Area
+              type="monotone"
+              dataKey="accuracy"
               stroke="#4f46e5"
-              strokeWidth="3"
+              fill="#eef2ff"
+              strokeWidth={3}
             />
-
-            {/* Points */}
-            <circle cx="0" cy="100" r="5" fill="white" stroke="#4f46e5" strokeWidth="3" />
-            <circle cx="116" cy="50" r="5" fill="white" stroke="#4f46e5" strokeWidth="3" />
-            <circle cx="233" cy="75" r="5" fill="white" stroke="#4f46e5" strokeWidth="3" />
-            <circle cx="350" cy="62" r="5" fill="white" stroke="#4f46e5" strokeWidth="3" />
-            <circle cx="466" cy="38" r="5" fill="white" stroke="#4f46e5" strokeWidth="3" />
-            <circle cx="583" cy="75" r="5" fill="white" stroke="#4f46e5" strokeWidth="3" />
-            <circle cx="700" cy="38" r="5" fill="white" stroke="#4f46e5" strokeWidth="3" />
-          </svg>
-
-          {/* Days */}
-          <div className="absolute -bottom-5 left-0 right-0 flex justify-between text-xs text-slate-500">
-            <span>Mon</span>
-            <span>Tue</span>
-            <span>Wed</span>
-            <span>Thu</span>
-            <span>Fri</span>
-            <span>Sat</span>
-            <span>Sun</span>
-          </div>
-        </div>
+          </AreaChart>
+        </ResponsiveContainer>
       </div>
 
-      {/* Summary */}
-      <div className="grid grid-cols-4 gap-2 mt-8">
+      <div className="grid grid-cols-4 gap-3 mt-2">
 
         <div className="border border-slate-200 rounded-lg p-3">
           <p className="text-xs text-slate-500">This Week</p>
-          <p className="font-bold text-sm mt-1">87%</p>
+          <p className="font-bold text-lg mt-1">87%</p>
         </div>
 
         <div className="border border-slate-200 rounded-lg p-3">
           <p className="text-xs text-slate-500">Last Week</p>
-          <p className="font-bold text-sm mt-1">82%</p>
+          <p className="font-bold text-lg mt-1">82%</p>
         </div>
 
         <div className="border border-slate-200 rounded-lg p-3">
           <p className="text-xs text-slate-500">Best Accuracy</p>
-          <p className="font-bold text-sm mt-1">91%</p>
+          <p className="font-bold text-lg mt-1">91%</p>
         </div>
 
         <div className="border border-slate-200 rounded-lg p-3">
           <p className="text-xs text-slate-500">Lowest Accuracy</p>
-          <p className="font-bold text-sm mt-1">74%</p>
+          <p className="font-bold text-lg mt-1">74%</p>
         </div>
 
       </div>
@@ -132,4 +91,4 @@ function PredictionAccuracy() {
   );
 }
 
-export default PredictionAccuracy;
+export default PredictionAccuracyTrend;

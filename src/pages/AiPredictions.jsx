@@ -11,16 +11,17 @@ import TopRecommendations from '../components/ai-predictions/TopRecommendations'
 const AiPredictions = () => {
   return (
     <Fragment>
-        <StateCard3 />
+        <div className='mt-3 space-y-3'>
+            <StateCard3 />
 
-        <div className="mt-3 flex gap-3">
+            <div className="grid grid-cols-2 gap-3">
+                <PredictionAccuracy />
+                <PredictionDistribution />
+            </div>
 
-            <PredictionAccuracy />
-
-            <PredictionDistribution />
-
-            <TopPredictedRisks />
-
+            <div>
+                <TopPredictedRisks />
+            </div>
         </div>
 
         <div className="mt-3 flex gap-3">
