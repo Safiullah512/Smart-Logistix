@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import DashboardLayout from "./layouts/DashboardLayout";
 import Deliveries from "./pages/Deliveries";
+import Drivers from "./pages/Drivers";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<DashboardLayout></DashboardLayout>}>
           <Route index element={<Dashboard></Dashboard>}></Route>
           <Route path="deliveries" element={<Deliveries></Deliveries>}></Route>
+          <Route path="drivers" element={<Drivers></Drivers>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
