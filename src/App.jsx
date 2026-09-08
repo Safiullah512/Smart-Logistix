@@ -6,6 +6,7 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import DashboardLayout from "./layouts/DashboardLayout";
 import Deliveries from "./pages/Deliveries";
 import Drivers from "./pages/Drivers";
+import Vehicles from "./pages/Vehicles";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<Dashboard></Dashboard>}></Route>
           <Route path="deliveries" element={<Deliveries></Deliveries>}></Route>
           <Route path="drivers" element={<Drivers></Drivers>}></Route>
+          <Route path="vehicles" element={<Vehicles></Vehicles>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
