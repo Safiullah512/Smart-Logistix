@@ -3,16 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function PredictionDistribution() {
   return (
-    <div className="bg-white rounded-lg shadow-[0_0_5px_rgba(0,0,0,0.2)] p-4">
+    <div className="bg-white rounded-lg shadow-[0_0_5px_rgba(0,0,0,0.2)] p-4 pb-10 h-fit">
 
       <h2 className="font-bold text-sm mb-4">
         Prediction Distribution
       </h2>
 
-      <div className="flex items-center justify-center gap-6">
+      <div className="flex items-center justify-between gap-6">
 
         {/* Donut */}
-        <div className="relative w-36 h-36">
+        <div className="relative w-36 h-36 ml-10">
 
           <div
             className="w-full h-full rounded-full"
@@ -35,7 +35,7 @@ function PredictionDistribution() {
         </div>
 
         {/* Legend */}
-        <div className="flex flex-col gap-3 text-xs">
+        <div className="flex flex-col gap-3 text-xs mr-10">
 
           <div className="flex items-start gap-2">
             <FontAwesomeIcon

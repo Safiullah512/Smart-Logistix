@@ -1,31 +1,41 @@
+import {
+  faClock,
+  faGasPump,
+  faIndianRupeeSign,
+  faShieldHalved,
+} from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ArrowUp } from "lucide-react";
+
 function PredictedImpact() {
   const impacts = [
     {
       title: "Time Saved (Est.)",
       value: "124 hrs",
       change: "8.6%",
-      icon: "◷",
+      icon: faClock,
       color: "green",
     },
     {
       title: "Fuel Saved (Est.)",
       value: "2,850 L",
       change: "7.3%",
-      icon: "⛽",
+      icon: faGasPump,
       color: "orange",
     },
     {
       title: "Cost Savings (Est.)",
       value: "₹1.25M",
       change: "9.4%",
-      icon: "₹",
+      icon: faIndianRupeeSign,
       color: "violet",
     },
     {
       title: "Risk Avoided",
       value: "48",
       change: "10.2%",
-      icon: "◆",
+      icon: faShieldHalved,
       color: "blue",
     },
   ];
@@ -56,7 +66,7 @@ function PredictedImpact() {
                     : "bg-blue-100 text-blue-600"
                 }`}
             >
-              {item.icon}
+              <FontAwesomeIcon icon={item.icon} />
             </div>
 
             {/* Title */}
@@ -70,10 +80,16 @@ function PredictedImpact() {
             </h3>
 
             {/* Change */}
-            <p className="text-xs text-green-600 mt-2">
-              ↑ <span className="font-bold">{item.change}</span>{" "}
-              <span className="text-slate-600">from last week</span>
-            </p>
+            <div className="flex items-center gap-2 mt-2">
+              <span className="text-green-600 flex items-center">
+                <ArrowUp className="w-4 h-4" />
+                <span className="font-bold text-xs">{item.change}</span>
+              </span>
+
+              <p className="text-xs">
+                from last week
+              </p>
+            </div>
           </div>
         ))}
       </div>
