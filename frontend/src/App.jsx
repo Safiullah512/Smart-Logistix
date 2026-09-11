@@ -13,9 +13,9 @@ import AiPredictions from "./pages/AiPredictions";
 
 // setting import component ************************************
 import SettingLayout from "./layouts/SettingsLayout";
-import Setting from "./pages/Settings";
-import SettingProfile from "./components/Setting/SettingProfile";
-import SettingNotification from "./components/Setting/SettingNotification";
+import ProfileSettings from "./components/Setting/ProfileSettings";
+
+import NotificationsSettings from "./components/Setting/NotificationsSettings";
 import SettingSecurity from "./components/Setting/SettingSecurity";
 import SettingIntegration from "./components/Setting/SettingIntegration";
 import SettingUserRoles from "./components/Setting/SettingUser&Roles";
@@ -42,11 +42,11 @@ function App() {
             <Route index element={<SettingGeneral></SettingGeneral>}></Route>
             <Route
               path="profile"
-              element={<SettingProfile></SettingProfile>}
+              element={<ProfileSettings></ProfileSettings>}
             ></Route>
             <Route
               path="notification"
-              element={<SettingNotification></SettingNotification>}
+              element={<NotificationsSettings></NotificationsSettings>}
             ></Route>
             <Route
               path="security"
