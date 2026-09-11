@@ -1,0 +1,23 @@
+[33m36ff567[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Setting Page Preparing till notifications
+[33m8a992b6[m Setting Page Preparing
+[33m0cbc135[m fixed the whole ai predictions page (#3)
+[33m182e958[m Updated vehicles dashboard
+[33m631aadc[m fixed the whole ai predictions page
+[33mecf62e3[m Vehicle page complete till Line garaph
+[33me303074[m Driver page ready without modify a line graph
+[33m81ad5f3[m Feature/aipredictions (#2)
+[33m6e30937[m[33m ([m[1;31morigin/feature/aipredictions[m[33m)[m fixed the chart in ai predictions page
+[33m7d415c3[m make new state card for ai prediction page
+[33m4072688[m Merge branch 'main' of https://github.com/Safiullah512/Smart-Logistix into feature/sidebar
+[33m8069d18[m Merge pull request #1 from Safiullah512/feature/sidebar
+[33m796beb5[m Deliveries page ready without fixing gap
+[33m84a5029[m make ai predictions ui roughly
+[33mb73dac1[m[33m ([m[1;31morigin/feature/sidebar[m[33m)[m fixed the sidebar
+[33mc23b1b0[m Circle Graph pending
+[33m886e7fa[m Pending Pie Chart Area
+[33md047ea8[m Merge branch 'main' of https://github.com/Safiullah512/Smart-Logistix
+[33m1d2d0b5[m fix ai prediction container and recent deliveries container on the dashboard page
+[33m7f63901[m fix the state card
+[33m32b8f19[m removed unnecessary css, changed statecard
+[33m6719c7f[m Delivery allDelivery component ready
+[33m474d9d8[m Dashboard ready
