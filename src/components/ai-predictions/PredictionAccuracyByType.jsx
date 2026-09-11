@@ -23,7 +23,7 @@ function PredictionAccuracyByType() {
   ];
 
   return (
-    <div className="bg-white rounded-lg p-4 shadow-[0_0_5px_rgba(0,0,0,0.2)]">
+    <div className="bg-white rounded-lg p-4 shadow-[0_0_5px_rgba(0,0,0,0.2)] h-full">
 
       {/* Header */}
       <div className="flex justify-between items-center mb-5">
@@ -37,7 +37,7 @@ function PredictionAccuracyByType() {
       </div>
 
       {/* Prediction Types */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col justify-between h-[220px]">
 
         {predictionTypes.map((item) => (
           <div

@@ -21,7 +21,7 @@ const data = [
 
 function PredictionAccuracyTrend() {
   return (
-    <div className="bg-white rounded-lg p-4 shadow-[0_0_5px_rgba(0,0,0,0.2)] h-[470px]">
+    <div className="bg-white rounded-lg p-4 shadow-[0_0_5px_rgba(0,0,0,0.2)] h-[560px]">
       
       <div className="flex items-center justify-between">
         <h2 className="font-bold text-lg">
@@ -64,7 +64,7 @@ function PredictionAccuracyTrend() {
         </ResponsiveContainer>
       </div>
 
-      <div className="grid grid-cols-4 gap-3 mt-2">
+      <div className="grid grid-cols-2 gap-3 mt-2">
 
         <div className="border border-slate-200 rounded-lg p-3">
           <p className="text-xs text-slate-500">This Week</p>
