@@ -42,6 +42,14 @@ function Header() {
       title: "Setting",
       breadcrumb: "Dashboard > Setting",
     },
+    "/setting/profile": {
+      title: "Setting",
+      breadcrumb: "Dashboard > Setting",
+    },
+    "/setting/notification": {
+      title: "Setting",
+      breadcrumb: "Dashboard > Setting",
+    },
   };
 
   const currentPage = pageData[location.pathname];

@@ -10,17 +10,20 @@ import Drivers from "./pages/Drivers";
 import Vehicles from "./pages/Vehicles";
 
 import AiPredictions from "./pages/AiPredictions";
-import Setting from "./pages/Settings";
+
+// setting import component ************************************
 import SettingLayout from "./layouts/SettingsLayout";
-import SettingProfile from "./components/SettingProfile";
-import SettingNotification from "./components/SettingNotification";
-import SettingSecurity from "./components/SettingSecurity";
-import SettingIntegration from "./components/SettingIntegration";
-import SettingUserRoles from "./components/SettingUser&Roles";
-import SettingDataPrivacy from "./components/SettingData&Privacy";
-import SettingBilling from "./components/SettingBilling";
-import SettingPreference from "./components/SettingSystemPreferences";
-import SettingActivity from "./components/SettingActivity";
+import Setting from "./pages/Settings";
+import SettingProfile from "./components/Setting/SettingProfile";
+import SettingNotification from "./components/Setting/SettingNotification";
+import SettingSecurity from "./components/Setting/SettingSecurity";
+import SettingIntegration from "./components/Setting/SettingIntegration";
+import SettingUserRoles from "./components/Setting/SettingUser&Roles";
+import SettingDataPrivacy from "./components/Setting/SettingData&Privacy";
+import SettingBilling from "./components/Setting/SettingBilling";
+import SettingPreference from "./components/Setting/SettingSystemPreferences";
+import SettingActivity from "./components/Setting/SettingActivity";
+import SettingGeneral from "./components/Setting/GeneralSettings";
 
 function App() {
   return (
@@ -36,7 +39,7 @@ function App() {
             element={<AiPredictions></AiPredictions>}
           ></Route>
           <Route path="setting" element={<SettingLayout></SettingLayout>}>
-            <Route index element={<Setting></Setting>}></Route>
+            <Route index element={<SettingGeneral></SettingGeneral>}></Route>
             <Route
               path="profile"
               element={<SettingProfile></SettingProfile>}
