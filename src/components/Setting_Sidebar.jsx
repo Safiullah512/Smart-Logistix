@@ -12,6 +12,7 @@ import {
   Database,
   Settings,
   LogOut,
+  Settings2,
 } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -27,77 +28,64 @@ import { faGoodreads } from "@fortawesome/free-brands-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
-function Sidebar() {
+function SettingSidebar() {
   return (
     <>
-      <aside className="w-fit min-h-screen bg-[#111827] text-white flex flex-col">
-        <div className="border-b border-slate-800 px-6 py-5 ">
-          <div className="flex gap-2">
-            <span>
-              <Van className="w-15 h-15 text-violet-700"></Van>
-            </span>
-            <div>
-              <h2 className="text-xl font-bold ">SmartLogix AI</h2>
-              <h2 className="mt-1 text-xs text-gray-200">
-                Smart Logistics Platform
-              </h2>
-            </div>
-          </div>
-        </div>
-
+      <aside className="w-fit min-h-screen bg-white text-white flex flex-col shadow-[0_0_3px_rgba(0,0,0,0.3)] rounded p-3">
         {/* Navigation */}
 
-        {/* Dasboard */}
+        {/* General */}
 
         <NavLink
-          to="/"
+          to="/setting"
           className={({ isActive }) =>
-            `mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs transition ${
+            `mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 py-1 text-xs transition ${
               isActive
-                ? "bg-blue-500 text-white"
-                : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                ? " text-blue-600 bg-blue-200"
+                : "text-black hover:bg-blue-200 hover:text-blue-600"
             }`
           }
         >
           <span className="w-5 h-5 flex items-center justify-center shrink-0">
-            <FontAwesomeIcon icon={faHome} className="w-5 h-5" />
+            <Settings className="w-5 h-5"></Settings>
           </span>
-          <span>Dashboard</span>
+          <span>General</span>
         </NavLink>
 
-        {/* Deliveries */}
+        {/* Profile */}
 
         <NavLink
-          to="/deliveries"
+          to="profile"
           className={({ isActive }) =>
-            `mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs transition ${
+            `mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 py-1 text-xs transition ${
               isActive
-                ? "bg-blue-500 text-white"
-                : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                ? " text-blue-600 bg-blue-200"
+                : "text-black hover:bg-blue-200 hover:text-blue-600"
             }`
           }
         >
           <span className="w-5 h-5 flex items-center justify-center shrink-0">
-            <FontAwesomeIcon icon={faBowlFood} className="w-5 h-5" />
+            <User></User>
           </span>
-          <span>Deliveries</span>
+          <span>Profile</span>
         </NavLink>
 
         {/* Vehicles */}
+
         <NavLink
-          to="/vehicles"
+          to="profile"
           className={({ isActive }) =>
-            `mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs transition ${
+            `mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 py-1 text-xs transition ${
               isActive
-                ? "bg-blue-500 text-white"
-                : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                ? " text-blue-600 bg-blue-200"
+                : "text-black hover:bg-blue-200 hover:text-blue-600"
             }`
           }
         >
           <span className="w-5 h-5 flex items-center justify-center shrink-0">
-            <FontAwesomeIcon icon={faVanShuttle} className="w-5 h-5" />
+            <User></User>
           </span>
-          <span>Vehicles</span>
+          <span>Notificationa</span>
         </NavLink>
 
         {/* Drivers */}
@@ -191,4 +179,4 @@ function Sidebar() {
     </>
   );
 }
-export default Sidebar;
+export default SettingSidebar;

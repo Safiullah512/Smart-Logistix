@@ -12,19 +12,58 @@ import {
   UserCircle,
 } from "lucide-react";
 import DeliveryChart from "./DeliveryChart";
+import { useLocation } from "react-router-dom";
 
 function Header() {
+  const location = useLocation();
+
+  const pageData = {
+    "/": {
+      title: "Dashboard",
+      subtitle: "Welcome back, Admin Here's what's happening today",
+    },
+    "/deliveries": {
+      title: "Deliveries",
+      breadcrumb: "Dashboard > Deliveries",
+    },
+    "/aipredictions": {
+      title: "AI Predictions",
+      breadcrumb: "Dashboard > AI Predictions",
+    },
+    "/vehicles": {
+      title: "Vehicles",
+      breadcrumb: "Dashboard > Vehicles",
+    },
+    "/drivers": {
+      title: "Drivers",
+      breadcrumb: "Dashboard > Drivers",
+    },
+    "/setting": {
+      title: "Setting",
+      breadcrumb: "Dashboard > Setting",
+    },
+  };
+
+  const currentPage = pageData[location.pathname];
+
   return (
     <>
       <div className=" w-full flex justify-between px-5 py-3">
         <div className="flex justify-between">
+          {/* left side of header */}
           <div className="flex gap-3">
-            
             <div>
-              <h2 className="text-xl font-bold">Dashboard</h2>
-              <p className="text-sm">
-                Welcome back, Admin Here's what's happening today
-              </p>
+              <h2 className="text-xl font-bold">{currentPage?.title}</h2>
+
+              {currentPage?.subtitle && (
+                <p className="text-sm">{currentPage.subtitle}</p>
+              )}
+
+              {currentPage?.breadcrumb && (
+                <p className="text-sm text-slate-500 mt-1">
+                  {currentPage.breadcrumb}
+                </p>
+              )}
             </div>
           </div>
         </div>

@@ -33,7 +33,7 @@ function DonutVehicle() {
     <div>
       <div className="w-fit h-fit bg-white rounded mt-2 shadow-[0_0_3px_rgba(0,0,0,0.3)] p-4 px-6">
         <h1 className="font-bold">Virtual Status Overview</h1>
-        <div className="mt-2 flex gap-15">
+        <div className="mt-2 flex gap-10">
           <div className="relative w-25 h-25">
             <PieChart width={100} height={100}>
               <Pie

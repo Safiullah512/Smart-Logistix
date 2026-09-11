@@ -6,28 +6,35 @@ import {
   faCheck,
   faCheckCircle,
   faClock,
+  faGasPump,
   faShuttleVan,
   faVanShuttle,
+  faWrench,
   faXmarkCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ArrowDown, ArrowUp, ArrowUp01, Box } from "lucide-react";
 
-import allDelivery from "../services/AllDeliveries";
+import DriverData, { driversData } from "../services/DriverData";
+import { fuelConsumptionTrend } from "../services/DriverData";
+import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons/faTriangleExclamation";
 
 function StateCard() {
-  const totalDelivery = allDelivery.length;
+  const totalDelivery = driversData.length;
 
-  const completed = allDelivery.filter((items) => {
-    return items.status === "Delivered";
+  const onDuty = driversData.filter((items) => {
+    return items.status === "On Duty";
   }).length;
-  const inTransit = allDelivery.filter((items) => {
-    return items.status === "In Transit";
+
+  const offline = driversData
+    .flatMap((driver) => driver.assignedVehicles)
+    .filter((vehicle) => vehicle.status === "Offline").length;
+
+  const inMaintenance = driversData.filter((items) => {
+    return items.assignedVehicles[0].status === "In Maintenance";
   }).length;
-  const pending = allDelivery.filter((items) => {
-    return items.status === "Pending";
-  }).length;
-  const delayed = allDelivery.filter((items) => {
+  console.log("In Maintenance :", inMaintenance);
+  const delayed = driversData.filter((items) => {
     return items.status === "Delayed";
   }).length;
 
@@ -41,7 +48,7 @@ function StateCard() {
           ></FontAwesomeIcon>
         </div>
         <div className="flex flex-col gap-2 justify-center">
-          <h2>Total Deliveries</h2>
+          <h2>Total Vehicles</h2>
           <h1 className="font-bold text-xl">{totalDelivery}</h1>
           <div className="flex gap-2 text-xs">
             <span className="text-green-600 flex">
@@ -60,8 +67,8 @@ function StateCard() {
           ></FontAwesomeIcon>
         </div>
         <div className="flex flex-col gap-2 justify-center">
-          <h2>Completed</h2>
-          <h1 className="font-bold text-xl">{completed}</h1>
+          <h2>Active Vehicles</h2>
+          <h1 className="font-bold text-xl">{onDuty}</h1>
           <div className="flex gap-2 text-xs">
             <span className="text-green-600 flex">
               <ArrowUp></ArrowUp>
@@ -72,15 +79,15 @@ function StateCard() {
         </div>
       </div>
       <div className="w-fit flex px-2 py-2 shadow-[0_0_5px_rgba(0,0,0,0.2)] bg-white rounded-lg gap-2 items-center text-sm">
-        <div className="bg-blue-200 rounded-xl w-auto h-auto text-center">
+        <div className="bg-orange-200 rounded-xl w-auto h-auto text-center">
           <FontAwesomeIcon
-            icon={faVanShuttle}
-            className="text-blue-600 p-3 text-xl"
+            icon={faWrench}
+            className="text-orange-500 p-3 text-xl"
           ></FontAwesomeIcon>
         </div>
         <div className="flex flex-col gap-2 justify-center">
-          <h2>In Transit</h2>
-          <h1 className="font-bold text-xl">{inTransit}</h1>
+          <h2>Under Maintenance</h2>
+          <h1 className="font-bold text-xl">{inMaintenance}</h1>
           <div className="flex gap-2 text-xs">
             <span className="text-green-600 flex">
               <ArrowUp></ArrowUp>
@@ -91,15 +98,17 @@ function StateCard() {
         </div>
       </div>
       <div className="w-fit flex px-2 py-2 shadow-[0_0_5px_rgba(0,0,0,0.2)] bg-white rounded-lg gap-2 items-center text-sm">
-        <div className="bg-orange-200 rounded-xl w-auto h-auto text-center">
+        <div className="bg-blue-200 rounded-xl w-auto h-auto text-center">
           <FontAwesomeIcon
-            icon={faClock}
-            className="text-orange-600 p-3 text-xl"
+            icon={faGasPump}
+            className="text-blue-600 p-3 text-xl"
           ></FontAwesomeIcon>
         </div>
         <div className="flex flex-col gap-2 justify-center">
-          <h2>Pending</h2>
-          <h1 className="font-bold text-xl">{pending}</h1>
+          <h2>Avg. Fuel Efficiency</h2>
+          <h1 className="font-bold text-xl">
+            {fuelConsumptionTrend.summary.avgPerVehicle}
+          </h1>
           <div className="flex gap-2 text-xs">
             <span className="text-red-600 flex">
               <ArrowDown></ArrowDown>
@@ -112,13 +121,13 @@ function StateCard() {
       <div className="w-fit flex px-2 py-2 shadow-[0_0_5px_rgba(0,0,0,0.2)] bg-white rounded-lg gap-2 items-center text-sm">
         <div className="bg-red-200 rounded-xl w-auto h-auto text-center">
           <FontAwesomeIcon
-            icon={faXmarkCircle}
+            icon={faTriangleExclamation}
             className="text-red-600 p-3 text-xl"
           ></FontAwesomeIcon>
         </div>
         <div className="flex flex-col gap-2 justify-center">
-          <h2>Cancelled</h2>
-          <h1 className="font-bold text-xl">{delayed}</h1>
+          <h2>Vehicles Offline</h2>
+          <h1 className="font-bold text-xl">{offline}</h1>
           <div className="flex gap-2 text-xs">
             <span className="text-red-600 flex">
               <ArrowDown></ArrowDown>

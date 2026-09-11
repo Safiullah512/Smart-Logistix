@@ -4844,7 +4844,7 @@ export const maintenanceAlerts = [
   },
   {
     vehicleId: "VCH-1246",
-    label: "Van HR 26 AB 5678",
+    label: "Van HR 26 AB 5678",   
     issue: "Oil change due",
     urgency: "medium",
     daysLeft: 5,
