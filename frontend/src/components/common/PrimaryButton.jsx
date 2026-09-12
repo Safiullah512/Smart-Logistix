@@ -9,7 +9,7 @@ export default function PrimaryButton({ onClick, label = "Save Changes" }) {
     <button
       type="button"
       onClick={onClick}
-      className="px-5 py-2.5 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors"
+      className="px-5 py-2.5 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors cursor-pointer"
     >
       {label}
     </button>
