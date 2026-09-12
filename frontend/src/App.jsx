@@ -31,6 +31,7 @@ import DataPrivacyPage from "./components/Setting/DataPrivacyPage";
 import BillingPage from "./components/Setting/BillingPage";
 import SystemPreferencePage from "./components/Setting/SystemPreferencesPage";
 import ActivityLogsPage from "./components/Setting/ActivityLogsPage";
+import Routess from "./pages/Routes";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="deliveries" element={<Deliveries></Deliveries>}></Route>
           <Route path="drivers" element={<Drivers></Drivers>}></Route>
           <Route path="vehicles" element={<Vehicles></Vehicles>}></Route>
+          <Route path="routes" element={<Routess></Routess>}></Route>
           <Route
             path="aipredictions"
             element={<AiPredictions></AiPredictions>}

@@ -93,7 +93,7 @@ function IntegrationRow({ iconNode, iconWrapClass, name, desc, trailing }) {
 
 export default function IntegrationsPanel() {
   return (
-    <div className="min-h-screen bg-slate-50 py-8 px-4">
+    <div className="min-h-screen  bg-white p-3 rounded shadow-[0_0_3px_rgba(0,0,0,0.3)]">
       <div className="max-w-4xl mx-auto flex flex-col gap-6">
         {/* Header */}
         <div className="flex items-start gap-3">

@@ -56,7 +56,11 @@ function PasswordField({ label, placeholder, value, onChange }) {
           className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
           aria-label={visible ? "Hide password" : "Show password"}
         >
-          {visible ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+          {visible ? (
+            <EyeOff className="w-4 h-4" />
+          ) : (
+            <Eye className="w-4 h-4" />
+          )}
         </button>
       </div>
     </div>
@@ -130,7 +134,7 @@ export default function SecuritySettings() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8 px-4">
+    <div className="min-h-screen bg-white p-3 rounded shadow-[0_0_3px_rgba(0,0,0,0.3)]">
       <div className="max-w-4xl mx-auto flex flex-col gap-6">
         {/* Page header */}
         <div className="flex items-start gap-3">
@@ -187,7 +191,9 @@ export default function SecuritySettings() {
             icon={ShieldCheck}
             title="Two-Factor Authentication"
             subtitle="Add an extra layer of security to your account."
-            action={<Toggle checked={twoFAEnabled} onChange={setTwoFAEnabled} />}
+            action={
+              <Toggle checked={twoFAEnabled} onChange={setTwoFAEnabled} />
+            }
           />
           <div className="flex items-center justify-between border-t border-slate-100 pt-4">
             <div className="flex items-center gap-2">
@@ -237,7 +243,9 @@ export default function SecuritySettings() {
                       <div className="flex items-center gap-2.5">
                         <Monitor className="w-4 h-4 text-indigo-500" />
                         <div>
-                          <p className="text-slate-800 font-medium">{s.device}</p>
+                          <p className="text-slate-800 font-medium">
+                            {s.device}
+                          </p>
                           <p className="text-slate-400 text-xs">{s.note}</p>
                         </div>
                       </div>

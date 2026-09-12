@@ -19,6 +19,7 @@ import {
   faBowlFood,
   faHome,
   faHomeAlt,
+  faRoute,
   faUser,
   faVanShuttle,
 } from "@fortawesome/free-solid-svg-icons";
@@ -119,12 +120,21 @@ function Sidebar() {
 
         {/* Routes */}
 
-        <button className="mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white">
-          <span>
-            <RouteIcon className="w-5 h-5" />
+        <NavLink
+          to="/routes"
+          className={({ isActive }) =>
+            `mb-1 flex w-full h-11 items-center gap-3 rounded-lg px-4 text-xs transition ${
+              isActive
+                ? "bg-blue-500 text-white"
+                : "text-slate-300 hover:bg-slate-800 hover:text-white"
+            }`
+          }
+        >
+          <span className="w-5 h-5 flex items-center justify-center shrink-0">
+            <FontAwesomeIcon icon={faRoute} className="w-5 h-5" />
           </span>
-          <span>Route</span>
-        </button>
+          <span>Routes</span>
+        </NavLink>
 
         {/* Accessibility */}
 

@@ -115,7 +115,7 @@ export default function SystemPreferencesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8 px-4">
+    <div className="min-h-screen  bg-white p-3 rounded shadow-[0_0_3px_rgba(0,0,0,0.3)]">
       <div className="max-w-5xl mx-auto flex flex-col gap-6">
         {/* Header */}
         <div className="flex items-start gap-3">
@@ -174,9 +174,7 @@ export default function SystemPreferencesPage() {
             />
             <div className="flex flex-col gap-5">
               <div>
-                <p className="text-sm font-medium text-slate-700 mb-2">
-                  Theme
-                </p>
+                <p className="text-sm font-medium text-slate-700 mb-2">Theme</p>
                 <div className="grid grid-cols-2 gap-3">
                   <button
                     onClick={() => setTheme("Light")}
@@ -223,7 +221,11 @@ export default function SystemPreferencesPage() {
                 </div>
               </div>
 
-              <SelectField label="Language" value="English" options={["English", "Hindi"]} />
+              <SelectField
+                label="Language"
+                value="English"
+                options={["English", "Hindi"]}
+              />
             </div>
           </div>
 

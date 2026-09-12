@@ -152,7 +152,7 @@ export default function UsersRolesPage() {
   const [page, setPage] = useState(1);
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8 px-4">
+    <div className="min-h-screen bg-white p-3 rounded shadow-[0_0_3px_rgba(0,0,0,0.3)]">
       <div className="max-w-6xl mx-auto flex flex-col gap-6">
         {/* Header */}
         <div className="flex items-start justify-between">
@@ -240,9 +240,7 @@ export default function UsersRolesPage() {
                           color={u.avatarColor}
                         />
                         <div>
-                          <p className="text-slate-800 font-medium">
-                            {u.name}
-                          </p>
+                          <p className="text-slate-800 font-medium">{u.name}</p>
                           <p className="text-slate-400 text-xs">{u.email}</p>
                         </div>
                       </div>
@@ -321,9 +319,7 @@ export default function UsersRolesPage() {
                 <p className="text-xl font-semibold text-slate-800">
                   {r.count}
                 </p>
-                <p className="text-sm font-medium text-slate-700">
-                  {r.label}
-                </p>
+                <p className="text-sm font-medium text-slate-700">{r.label}</p>
                 <p className="text-xs text-slate-500">{r.desc}</p>
               </div>
             ))}

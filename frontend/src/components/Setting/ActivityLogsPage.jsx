@@ -176,7 +176,7 @@ export default function ActivityLogsPage() {
   const [page, setPage] = useState(1);
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8 px-4">
+    <div className="min-h-screen  bg-white p-3 rounded shadow-[0_0_3px_rgba(0,0,0,0.3)]">
       <div className="max-w-6xl mx-auto flex flex-col gap-6">
         {/* Header */}
         <div className="flex items-start gap-3">
@@ -244,9 +244,7 @@ export default function ActivityLogsPage() {
                           <p className="text-slate-800 font-medium">
                             {log.name}
                           </p>
-                          <p className="text-slate-400 text-xs">
-                            {log.email}
-                          </p>
+                          <p className="text-slate-400 text-xs">{log.email}</p>
                         </div>
                       </div>
                     </td>

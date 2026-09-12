@@ -40,7 +40,7 @@ import { NavLink } from "react-router-dom";
 function SettingSidebar() {
   return (
     <>
-      <aside className="w-fit min-h-screen bg-white text-white flex flex-col shadow-[0_0_3px_rgba(0,0,0,0.3)] rounded p-3">
+      <aside className="w-fit max-h-screen bg-white text-white flex flex-col shadow-[0_0_3px_rgba(0,0,0,0.3)] rounded p-3">
         {/* Navigation */}
 
         {/* General */}

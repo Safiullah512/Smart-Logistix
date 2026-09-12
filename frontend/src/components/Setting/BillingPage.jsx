@@ -138,7 +138,15 @@ function StatIconValue({ icon: Icon, iconBg, iconColor, label, value, unit }) {
   );
 }
 
-function UsageCard({ icon: Icon, iconBg, iconColor, label, value, percent, barColor }) {
+function UsageCard({
+  icon: Icon,
+  iconBg,
+  iconColor,
+  label,
+  value,
+  percent,
+  barColor,
+}) {
   return (
     <div className="border border-slate-100 rounded-xl p-4">
       <div className="flex items-center gap-2.5 mb-3">
@@ -181,7 +189,7 @@ function StatusPill({ status }) {
 
 export default function BillingPage() {
   return (
-    <div className="min-h-screen bg-slate-50 py-8 px-4">
+    <div className="min-h-screen bg-white p-3 rounded shadow-[0_0_3px_rgba(0,0,0,0.3)]">
       <div className="max-w-5xl mx-auto flex flex-col gap-6">
         {/* Header */}
         <div className="flex items-start gap-3">
@@ -199,9 +207,7 @@ export default function BillingPage() {
         {/* Current Plan */}
         <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
           <div className="flex items-center justify-between px-6 py-5">
-            <p className="text-sm font-semibold text-slate-800">
-              Current Plan
-            </p>
+            <p className="text-sm font-semibold text-slate-800">Current Plan</p>
             <button className="border border-indigo-200 text-indigo-600 text-sm font-medium px-4 py-2 rounded-lg hover:bg-indigo-50 transition-colors">
               Change Plan
             </button>
@@ -295,9 +301,7 @@ export default function BillingPage() {
                     </td>
                     <td className="px-6 py-3.5 text-slate-600">{inv.date}</td>
                     <td className="px-6 py-3.5 text-slate-600">{inv.plan}</td>
-                    <td className="px-6 py-3.5 text-slate-800">
-                      {inv.amount}
-                    </td>
+                    <td className="px-6 py-3.5 text-slate-800">{inv.amount}</td>
                     <td className="px-6 py-3.5">
                       <StatusPill status={inv.status} />
                     </td>

@@ -90,7 +90,7 @@ export default function DataPrivacyPage() {
   const [productImprovement, setProductImprovement] = useState(true);
 
   return (
-    <div className="min-h-screen bg-slate-50 py-8 px-4">
+    <div className="min-h-screen bg-white p-3 rounded shadow-[0_0_3px_rgba(0,0,0,0.3)]">
       <div className="max-w-4xl mx-auto flex flex-col gap-6">
         {/* Header */}
         <div className="flex items-start gap-3">
@@ -190,9 +190,7 @@ export default function DataPrivacyPage() {
 
         {/* Data Security */}
         <div className="bg-white border border-slate-200 rounded-xl p-6">
-          <p className="text-sm font-semibold text-slate-800">
-            Data Security
-          </p>
+          <p className="text-sm font-semibold text-slate-800">Data Security</p>
           <p className="text-sm text-slate-500 mt-0.5 mb-5">
             We take your data security seriously.
           </p>
