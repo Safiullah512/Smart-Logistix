@@ -1,8 +1,8 @@
 import AllVehicles from "../components/AllVehicles.jsx";
 import DonutVehicle from "../components/DonutVehicles.jsx";
 import FuelConsumption from "../components/FuelConsumption.jsx";
-import Header from "../components/Header";
-import StateCard from "../components/StateCard (V)";
+import Header from "../components/Header.jsx";
+import StateCard from "../components/StateCard (V).jsx";
 import VechicleAttention from "../components/VehicleAttention.jsx";
 
 function Vehicles() {

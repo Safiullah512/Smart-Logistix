@@ -1,4 +1,4 @@
-import SettingSidebar from "../components/Setting_Sidebar";
+import SettingSidebar from "../components/Setting/Setting_Sidebar";
 import Sidebar from "../components/Sidebar";
 import Setting from "../pages/Settings";
 import { Outlet } from "react-router-dom";
