@@ -120,7 +120,7 @@ function AllDrivers() {
               {currentData.map((item) => (
                 <tr
                   key={item.id}
-                  className="*:p-3 bg-slate-50 border border-slate-200 *:pl-3"
+                  className="*:p-3 bg-slate-50 border border-slate-200 *:pl-3 cursor-pointer hover:bg-white"
                 >
                   <td>{item.id}</td>
                   <td>

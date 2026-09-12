@@ -18,14 +18,18 @@ import DeliveryChart from "./DeliveryChart";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 function Header({ toggleBar }) {
   const location = useLocation();
 
+  const { photoUrl } = useContext(UserContext);
+
   const navigate = useNavigate();
 
   const handleProfile = () => {
-    navigate("/setting");
+    navigate("/setting/profile");
   };
 
   const [profileMenu, setProfileMenu] = useState(false);
@@ -146,10 +150,15 @@ function Header({ toggleBar }) {
           </div>
           <div className="flex items-center gap-2 relative">
             <div className="w-12 h-12 rounded-full bg-blue-100 text-center flex items-center gap-6 overflow-hidden justify-center">
-              <FontAwesomeIcon
-                icon={faUser}
-                className="text-blue-500 text-4xl mt-3"
-              ></FontAwesomeIcon>
+              {photoUrl ? (
+                <img
+                  src={photoUrl}
+                  alt="Profile"
+                  className="w-10 h-10 rounded-full object-cover object-top"
+                />
+              ) : (
+                <User size={24} />
+              )}
             </div>
             <div className="flex flex-col">
               <h2 className="text-lg font-semibold">Admin</h2>

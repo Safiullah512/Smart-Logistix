@@ -35,57 +35,65 @@ import Routess from "./pages/Routes";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<DashboardLayout></DashboardLayout>}>
-          <Route index element={<Dashboard></Dashboard>}></Route>
-          <Route path="deliveries" element={<Deliveries></Deliveries>}></Route>
-          <Route path="drivers" element={<Drivers></Drivers>}></Route>
-          <Route path="vehicles" element={<Vehicles></Vehicles>}></Route>
-          <Route path="routes" element={<Routess></Routess>}></Route>
-          <Route
-            path="aipredictions"
-            element={<AiPredictions></AiPredictions>}
-          ></Route>
-          <Route path="setting" element={<SettingLayout></SettingLayout>}>
-            <Route index element={<SettingGeneral></SettingGeneral>}></Route>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<DashboardLayout></DashboardLayout>}>
+            <Route index element={<Dashboard></Dashboard>}></Route>
             <Route
-              path="profile"
-              element={<ProfileSettings></ProfileSettings>}
+              path="deliveries"
+              element={<Deliveries></Deliveries>}
             ></Route>
+            <Route path="drivers" element={<Drivers></Drivers>}></Route>
+            <Route path="vehicles" element={<Vehicles></Vehicles>}></Route>
+            <Route path="routes" element={<Routess></Routess>}></Route>
             <Route
-              path="notification"
-              element={<NotificationsSettings></NotificationsSettings>}
+              path="aipredictions"
+              element={<AiPredictions></AiPredictions>}
             ></Route>
-            <Route
-              path="security"
-              element={<SecuritySettings></SecuritySettings>}
-            ></Route>
-            <Route
-              path="integrations"
-              element={<IntegrationsPanel></IntegrationsPanel>}
-            ></Route>
-            <Route
-              path="user&roles"
-              element={<UserRolesPage></UserRolesPage>}
-            ></Route>
-            <Route
-              path="data&privacy"
-              element={<DataPrivacyPage></DataPrivacyPage>}
-            ></Route>
-            <Route path="billing" element={<BillingPage></BillingPage>}></Route>
-            <Route
-              path="systemPreference"
-              element={<SystemPreferencePage></SystemPreferencePage>}
-            ></Route>
-            <Route
-              path="activity"
-              element={<ActivityLogsPage></ActivityLogsPage>}
-            ></Route>
+            <Route path="setting" element={<SettingLayout></SettingLayout>}>
+              <Route index element={<SettingGeneral></SettingGeneral>}></Route>
+              <Route
+                path="profile"
+                element={<ProfileSettings></ProfileSettings>}
+              ></Route>
+              <Route
+                path="notification"
+                element={<NotificationsSettings></NotificationsSettings>}
+              ></Route>
+              <Route
+                path="security"
+                element={<SecuritySettings></SecuritySettings>}
+              ></Route>
+              <Route
+                path="integrations"
+                element={<IntegrationsPanel></IntegrationsPanel>}
+              ></Route>
+              <Route
+                path="user&roles"
+                element={<UserRolesPage></UserRolesPage>}
+              ></Route>
+              <Route
+                path="data&privacy"
+                element={<DataPrivacyPage></DataPrivacyPage>}
+              ></Route>
+              <Route
+                path="billing"
+                element={<BillingPage></BillingPage>}
+              ></Route>
+              <Route
+                path="systemPreference"
+                element={<SystemPreferencePage></SystemPreferencePage>}
+              ></Route>
+              <Route
+                path="activity"
+                element={<ActivityLogsPage></ActivityLogsPage>}
+              ></Route>
+            </Route>
           </Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 export default App;

@@ -13,11 +13,10 @@ import {
 // ---------------- Small components ----------------
 
 function MenuItem({ icon: Icon, title, subtitle, active, danger, onClick }) {
-  const navigate = useNavigate();
   return (
     <button
-      onClick={onclick}
-      className={`w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-left transition-colors ${
+      onClick={onClick}
+      className={`w-full flex cursor-pointer items-center gap-3.5 px-4 py-3 rounded-xl text-left transition-colors ${
         active ? "bg-indigo-50" : "hover:bg-white"
       }`}
     >
