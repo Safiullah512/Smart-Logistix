@@ -14,16 +14,23 @@ import AiPredictions from "./pages/AiPredictions";
 // setting import component ************************************
 import SettingLayout from "./layouts/SettingsLayout";
 import ProfileSettings from "./components/Setting/ProfileSettings";
+import SecuritySettings from "./components/Setting/SecuritySettings";
 
 import NotificationsSettings from "./components/Setting/NotificationsSettings";
 import SettingSecurity from "./components/Setting/SettingSecurity";
-import SettingIntegration from "./components/Setting/SettingIntegration";
+import SettingsIntegrationsPage from "./components/Setting/SettingsIntegrationsPage";
 import SettingUserRoles from "./components/Setting/SettingUser&Roles";
 import SettingDataPrivacy from "./components/Setting/SettingData&Privacy";
 import SettingBilling from "./components/Setting/SettingBilling";
 import SettingPreference from "./components/Setting/SettingSystemPreferences";
 import SettingActivity from "./components/Setting/SettingActivity";
 import SettingGeneral from "./components/Setting/GeneralSettings";
+import IntegrationsPanel from "./components/Setting/IntegrationsPanel";
+import UserRolesPage from "./components/Setting/UsersRolesPage";
+import DataPrivacyPage from "./components/Setting/DataPrivacyPage";
+import BillingPage from "./components/Setting/BillingPage";
+import SystemPreferencePage from "./components/Setting/SystemPreferencesPage";
+import ActivityLogsPage from "./components/Setting/ActivityLogsPage";
 
 function App() {
   return (
@@ -50,31 +57,28 @@ function App() {
             ></Route>
             <Route
               path="security"
-              element={<SettingSecurity></SettingSecurity>}
+              element={<SecuritySettings></SecuritySettings>}
             ></Route>
             <Route
               path="integrations"
-              element={<SettingIntegration></SettingIntegration>}
+              element={<IntegrationsPanel></IntegrationsPanel>}
             ></Route>
             <Route
               path="user&roles"
-              element={<SettingUserRoles></SettingUserRoles>}
+              element={<UserRolesPage></UserRolesPage>}
             ></Route>
             <Route
               path="data&privacy"
-              element={<SettingDataPrivacy></SettingDataPrivacy>}
+              element={<DataPrivacyPage></DataPrivacyPage>}
             ></Route>
-            <Route
-              path="billing"
-              element={<SettingBilling></SettingBilling>}
-            ></Route>
+            <Route path="billing" element={<BillingPage></BillingPage>}></Route>
             <Route
               path="systemPreference"
-              element={<SettingPreference></SettingPreference>}
+              element={<SystemPreferencePage></SystemPreferencePage>}
             ></Route>
             <Route
               path="activity"
-              element={<SettingActivity></SettingActivity>}
+              element={<ActivityLogsPage></ActivityLogsPage>}
             ></Route>
           </Route>
         </Route>
