@@ -24,7 +24,7 @@ import { UserContext } from "../context/UserContext";
 function Header({ toggleBar }) {
   const location = useLocation();
 
-  const { photoUrl } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   const navigate = useNavigate();
 
@@ -36,6 +36,29 @@ function Header({ toggleBar }) {
 
   const toggleMenuBar = () => {
     return setProfileMenu(!profileMenu);
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files?.[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        const imageUrl = reader.result;
+
+        setPhotoUrl(imageUrl);
+
+        localStorage.setItem("profileImage", imageUrl);
+
+        setUsers({
+          ...user,
+          profileImage: imageUrl,
+        });
+      };
+
+      reader.readAsDataURL(file);
+    }
   };
 
   const pageData = {
@@ -150,9 +173,9 @@ function Header({ toggleBar }) {
           </div>
           <div className="flex items-center gap-2 relative">
             <div className="w-12 h-12 rounded-full bg-blue-100 text-center flex items-center gap-6 overflow-hidden justify-center">
-              {photoUrl ? (
+              {user.profileImage ? (
                 <img
-                  src={photoUrl}
+                  src={user.profileImage}
                   alt="Profile"
                   className="w-10 h-10 rounded-full object-cover object-top"
                 />
@@ -161,7 +184,7 @@ function Header({ toggleBar }) {
               )}
             </div>
             <div className="flex flex-col">
-              <h2 className="text-lg font-semibold">Admin</h2>
+              <h2 className="text-lg font-semibold">{user.fullName}</h2>
               <p>Administrator</p>
             </div>
             <div>
