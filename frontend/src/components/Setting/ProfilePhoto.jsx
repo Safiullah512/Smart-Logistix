@@ -1,17 +1,20 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useState } from "react";
 import { Image, User, Upload } from "lucide-react";
 import Card from "../common/Card";
 import { UserContext } from "../../context/UserContext";
 
-/**
- * ProfilePhoto - avatar preview + "Change Photo" upload button.
- */
 export default function ProfilePhoto() {
   const fileInputRef = useRef(null);
 
-  const { photoUrl, setPhotoUrl } = useContext(UserContext);
+  const { user, setUsers } = useContext(UserContext);
 
-  const handleChoosePhoto = () => fileInputRef.current?.click();
+  const [photoUrl, setPhotoUrl] = useState(
+    user?.profileImage || localStorage.getItem("profileImage") || "",
+  );
+
+  const handleChoosePhoto = () => {
+    fileInputRef.current?.click();
+  };
 
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
@@ -20,9 +23,16 @@ export default function ProfilePhoto() {
       const reader = new FileReader();
 
       reader.onload = () => {
-        setPhotoUrl(reader.result);
+        const imageUrl = reader.result;
 
-        localStorage.setItem("profileImage", reader.result);
+        setPhotoUrl(imageUrl);
+
+        localStorage.setItem("profileImage", imageUrl);
+
+        setUsers({
+          ...user,
+          profileImage: imageUrl,
+        });
       };
 
       reader.readAsDataURL(file);

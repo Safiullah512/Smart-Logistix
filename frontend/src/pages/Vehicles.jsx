@@ -4,12 +4,16 @@ import FuelConsumption from "../components/FuelConsumption.jsx";
 import Header from "../components/Header.jsx";
 import StateCard from "../components/StateCard (V).jsx";
 import VechicleAttention from "../components/VehicleAttention.jsx";
+import LiveVehicleTrackingMap from "../components/LiveVehicleTrackingMap.jsx";
 
 function Vehicles() {
   return (
     <div>
       <StateCard></StateCard>
-      <AllVehicles></AllVehicles>
+      <div className="flex gap-2">
+        <AllVehicles></AllVehicles>
+        <LiveVehicleTrackingMap></LiveVehicleTrackingMap>
+      </div>
       <div className="flex gap-2 mb-10">
         <DonutVehicle></DonutVehicle>
         <FuelConsumption></FuelConsumption>
