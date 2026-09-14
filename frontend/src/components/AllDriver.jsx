@@ -50,8 +50,8 @@ function AllDrivers() {
 
   return (
     <div>
-      <div className="w-fit flex flex-col bg-white rounded shadow-[0_0_3px_rgba(0,0,0,0.3)] p-4 mt-3">
-        <div className="w-150 flex justify-between ">
+      <div className="w-full flex flex-col bg-white rounded shadow-[0_0_3px_rgba(0,0,0,0.3)] p-4 mt-3">
+        <div className="w-full flex justify-between gap-3">
           <h1 className="font-bold text-sm">All Driver</h1>
           <div className="w-28 flex gap-1 border border-slate-500 text-xs rounded-sm items-center">
             <span className="ml-1">

@@ -21,9 +21,9 @@ function DriverDetails() {
   const driversData1 = driversData[0];
   console.log(driversData1);
   return (
-    <div className="w-fix h-auto bg-white shadow-[0_0_3px_rgba(0,0,0,0.3)] p-4 mt-3 text-sm">
+    <div className="w-full h-auto bg-white rounded shadow-[0_0_3px_rgba(0,0,0,0.3)] p-5 mt-3 text-sm">
       <div className="flex justify-between">
-        <h1 className="font-bold text-xl">Deriver Details</h1>
+        <h1 className="font-bold text-xl">Driver Details</h1>
         <div className="flex gap-2">
           <button className="bg-green-200 text-green-700 rounded p-1 text-xs font-bold">
             On Duty

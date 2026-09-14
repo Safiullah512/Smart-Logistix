@@ -31,7 +31,7 @@ function DonutDriver() {
   const driverlength = driversData.length;
   return (
     <div>
-      <div className="w-fit h-fit bg-white rounded mt-2 shadow-[0_0_3px_rgba(0,0,0,0.3)] p-4 px-6">
+      <div className="w-fit h-fit bg-white rounded mt-3 shadow-[0_0_3px_rgba(0,0,0,0.3)] p-4 px-6">
         <h1 className="font-bold">Driver by Status</h1>
         <div className="mt-2 flex gap-15">
           <div className="relative w-25 h-25">
